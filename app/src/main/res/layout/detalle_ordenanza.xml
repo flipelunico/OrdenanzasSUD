@@ -19,9 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:paddingTop="24dp">
-
-
+            android:paddingTop="10dp">
 
                 <LinearLayout
                     style="@style/Widget.CardContent"
@@ -29,17 +27,11 @@
                     android:layout_height="wrap_content">
                     <!--Etiqueta Perfil -->
                     <TextView
+                        android:id="@+id/detail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Detalles"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
-                    <!--Texto de ejemplo-->
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/girl_ipsum" />
-
-                </LinearLayout>
+                        android:text="Detalles"/>
+        </LinearLayout>
 
 
 

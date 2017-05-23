@@ -10,12 +10,6 @@ import java.util.Random;
 
 public class Ordenanzas {
 
-    public static final String[] NombreOrdenanzas = {
-            "La unción con aceite", "Bautismo", "La bendicion de los enfermos, de consuelo y consejo",
-            "Sellamiento de la uncion", "Confirmacion"
-
-    };
-
     /**
      * Genera una lista de objetos {@link Ordenanza} con un tamaño determinado
      *
@@ -23,15 +17,12 @@ public class Ordenanzas {
      * @return Lista aleatoria
      */
     public static List<Ordenanza> randomList(int count) {
-        Random random = new Random();
+
         List<Ordenanza> items = new ArrayList<>();
 
-        // Restricción de tamaño
-        count = Math.min(count, NombreOrdenanzas.length);
 
-        for (String i: NombreOrdenanzas) {
-            items.add(new Ordenanza(i));
-        }
+        items.add(new Ordenanza("Bautismo","_________ (nombre completo de la persona), habiendo sido comisionado por Jesucristo, yo te bautizo en el nombre del Padre, y del Hijo, y del Espíritu Santo. Amén."));
+
 
         return new ArrayList<>(items);
     }

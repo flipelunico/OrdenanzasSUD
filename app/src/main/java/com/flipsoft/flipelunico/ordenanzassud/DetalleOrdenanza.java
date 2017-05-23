@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
@@ -24,6 +25,7 @@ public class DetalleOrdenanza extends AppCompatActivity {
 
 
     private static final String EXTRA_NAME = "com.herprogramacion.toolbarapp.name";
+    private static final String EXTRA_DETAIL = "com.herprogramacion.toolbarapp.detail";
     private static final String EXTRA_DRAWABLE = "com.herprogramacion.toolbarapp.drawable";
 
     /**
@@ -48,6 +50,7 @@ public class DetalleOrdenanza extends AppCompatActivity {
     public static Intent getLaunchIntent(Context context, Ordenanza ordenanza) {
         Intent intent = new Intent(context, DetalleOrdenanza.class);
         intent.putExtra(EXTRA_NAME, ordenanza.getName());
+        intent.putExtra(EXTRA_DETAIL, ordenanza.getDetail());
         intent.putExtra(EXTRA_DRAWABLE, ordenanza.getIdDrawable());
         return intent;
     }
@@ -63,13 +66,16 @@ public class DetalleOrdenanza extends AppCompatActivity {
 
         Intent i = getIntent();
         String name = i.getStringExtra(EXTRA_NAME);
+        String detail = i.getStringExtra(EXTRA_DETAIL);
         int idDrawable = i.getIntExtra(EXTRA_DRAWABLE, -1);
 
-        CollapsingToolbarLayout collapser =
-                (CollapsingToolbarLayout) findViewById(R.id.collapser);
+        CollapsingToolbarLayout collapser = (CollapsingToolbarLayout) findViewById(R.id.collapser);
         collapser.setTitle(name); // Cambiar título
 
         loadImageParallax(idDrawable);// Cargar Imagen
+
+        TextView  detailView = (TextView) findViewById(R.id.detail);
+        detailView.setText(detail);
 
         // Setear escucha al FAB
         //FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);

@@ -9,17 +9,19 @@ import java.util.Random;
 public class Ordenanza {
 
     private String name;
-    private String detalle;
+    private String detail;
     private int idDrawable;
 
 
-    public Ordenanza(String name, int idDrawable) {
+    public Ordenanza(String name,String detail, int idDrawable) {
         this.name = name;
+        this.detail = detail;
         this.idDrawable = idDrawable;
     }
 
-    public Ordenanza(String name) {
+    public Ordenanza(String name,String detail) {
         this.name = name;
+        this.detail = detail;
         this.idDrawable = getRandomGirlDrawable();
     }
 
@@ -27,7 +29,7 @@ public class Ordenanza {
         return name;
     }
 
-    public String getDetalle() {return detalle;}
+    public String getDetail() { return detail; }
 
     public int getIdDrawable() {
         return idDrawable;
